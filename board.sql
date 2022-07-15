@@ -21,12 +21,13 @@ CREATE TABLE board(
 
 -- 게시글 추가
 INSERT INTO board(bno, title, content, regDate)
-VALUES (mySeq.NEXTVAL, "제목1", "제목1 내용 입니다.', SYSDATE);
+VALUES (mySeq.NEXTVAL, '제목1', '제목1 내용 입니다.', SYSDATE);
 
 INSERT INTO board(bno, title, content, regDate)
-VALUES (mySeq.NEXTVAL, "제목2", "제목2 내용 입니다.', SYSDATE);
+VALUES (mySeq.NEXTVAL, '제목2', '제목2 내용 입니다.', SYSDATE);
 
-SELECT * KEY board;
+SELECT * FROM board;
 
+COMMIT;
 
 
