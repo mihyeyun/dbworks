@@ -33,6 +33,11 @@ AND book.price = 20000;
 SELECT customer.name, orders.saleprice
 FROM customer LEFT OUTER JOIN orders ON customer.custid = orders.custid;
 
+-- (INNER) JOIN : 조건이 일치하는 쿼리의 결과를 출력
+-- 고객 이름과 고객이 주문한 도서의 판매가격을 구하시오
+SELECT customer.name, orders.saleprice
+FROM customer INNER JOIN orders ON customer.custid = orders.custid;
+
 
 
 
