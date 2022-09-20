@@ -35,3 +35,20 @@ select * from tbl_member_auth;
 
 drop table tbl_member_auth;
 drop table tbl_member;
+
+
+create table tbl_reply(
+    rno number(5),
+    bno number(5) not null,
+    reply varchar2(1000) not null,
+    replyer varchar2(50) not null,
+    replydate date default sysdate,
+    updatedate date default sysdate
+);
+
+create sequence seq_reply;
+alter table tbl_reply add CONSTRAINT pk_reply primary key(rno);
+alter table tbl_reply add CONSTRAINT fk_reply_board
+FOREIGN key(bno) REFERENCES tbl_board(bno);
+
+insert into tbl_reply(rno, bno, reply, replyer) values (seq_reply.NEXTVAL, 71, '태풍이 오네요', 'admin');
